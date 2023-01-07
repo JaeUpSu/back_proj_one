@@ -7,7 +7,7 @@ from .models import Feed
 
 @admin.register(Feed)
 class FeedAdmin(admin.ModelAdmin):
-    list_display = ("user","content","image_tag","like",)
+    list_display = ("user","content","image_tag","like","create_at", "update_at",)
     search_fields=("content", "user", )
 
     def image_tag(self, obj):

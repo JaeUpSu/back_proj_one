@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+
+<ul>
+  {% for feed in datas %}
+  <li>{{feed.content}} / {{feed.like}} / {{feed.user}}</li>
+  {% endfor %}
+</ul>

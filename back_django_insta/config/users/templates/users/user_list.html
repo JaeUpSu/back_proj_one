@@ -1,0 +1,35 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %} {% block content %}
+<div class="container my-3">
+  <table
+    class="table"
+    style="border: 2px solid orange; border-collapse: collapse"
+  >
+    <thead style="border: 2px solid orange">
+      <tr class="text-center thead-dark">
+        <th style="border: 2px solid orange">USER_Name</th>
+        <th style="width: 50%; border: 2px solid orange">Email</th>
+        <th style="border: 2px solid orange">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if user_list %} {% for user in user_list %}
+      <tr class="text-center">
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ user.username }} </a>
+        </td>
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ user.email }} </a>
+        </td>
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ user.name }} </a>
+        </td>
+      </tr>
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="3">피드가 없습니다.</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

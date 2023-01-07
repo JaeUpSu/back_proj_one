@@ -18,6 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 이미지 파일 자동생성
 MEDIA_ROOT = BASE_DIR / 'media'
 
+MEDIA_URL = "media/"
+
+AUTH_USER_MODEL = "users.User"
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     "users.apps.UsersConfig",
     "feeds.apps.FeedsConfig",
     "reviews.apps.ReviewsConfig",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -108,9 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ko-kr"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Seoul"
 
 USE_I18N = True
 

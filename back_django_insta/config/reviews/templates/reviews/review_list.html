@@ -1,0 +1,35 @@
+{% block content %}
+<div class="container my-3">
+  <table
+    class="table"
+    style="border: 2px solid orange; border-collapse: collapse"
+  >
+    <thead style="border: 2px solid orange">
+      <tr class="text-center thead-dark">
+        <th style="border: 2px solid orange">name</th>
+        <th style="width: 50%; border: 2px solid orange">Feed</th>
+        <th style="border: 2px solid orange">Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if review_list %} {% for review in review_list %}
+      <tr class="text-center">
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ review.user }} </a>
+        </td>
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ review.feed }} </a>
+        </td>
+        <td style="border: 2px solid orange">
+          <a href="#"> {{ review.content }} </a>
+        </td>
+      </tr>
+      {% endfor %} {% else %}
+      <tr>
+        <td colspan="3">리뷰가 없습니다.</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

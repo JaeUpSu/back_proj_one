@@ -1,12 +1,14 @@
 from django.db import models
 from users.models import User
+from reviews.models import Review
+from commons.models import CommonModel
 
 # Create your models here.
-class Feed(models.Model):
+class Feed(CommonModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    #reivew = models.ForeignKey(Review, on_delete=models.CASCADE)
     content = models.TextField()
-    like = models.DecimalField(max_digits=9, decimal_places=0)
+    like = models.PositiveIntegerField()
     img = models.ImageField(blank=True, null=True)
     
-    
+    def __str__(self):
+        return self.user.__str__()
